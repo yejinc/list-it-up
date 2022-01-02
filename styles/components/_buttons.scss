@@ -3,28 +3,7 @@
   flex-wrap: wrap;
   padding: 0 16px;
   border-radius: 2px;
-}
-
-.category {
-  @extend %btn-base;
-  height: 36px;
-  width: auto;
-  background-color: $light-blue;
   transition: opacity 350ms ease-in-out;
-
-  &-emoji {
-    @include flex;
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
-    overflow: hidden;
-    object-fit: cover;
-  }
-
-  &-text {
-    @include text-style(14, $primary);
-    display: inline-block;
-  }
 
   &:active {
     opacity: 0.4;
@@ -34,5 +13,35 @@
     &:hover {
       opacity: 0.4;
     }
+  }
+}
+
+.btn-category {
+  @extend %btn-base;
+  @include text-style(14, $primary);
+  height: 36px;
+  width: auto;
+  background-color: $light-blue;
+
+  .emoji {
+    @include flex;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+}
+
+.btn-add {
+  @extend %btn-base;
+  @include text-style(14, $primary);
+  font-family: $font-title;
+  height: 50px;
+  width: 100%;
+  background-color: $highlight;
+
+  @include responsive(T) {
+    width: 77px;
   }
 }
