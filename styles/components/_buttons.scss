@@ -1,10 +1,16 @@
-.badge {
+%btn-base {
   @include inline-flex;
-  height: 36px;
-  width: auto;
+  flex-wrap: wrap;
   padding: 0 16px;
   border-radius: 2px;
+}
+
+.category {
+  @extend %btn-base;
+  height: 36px;
+  width: auto;
   background-color: $light-blue;
+  transition: opacity 350ms ease-in-out;
 
   &-emoji {
     @include flex;
