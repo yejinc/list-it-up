@@ -1,0 +1,22 @@
+.badge {
+  @include inline-flex;
+  height: 36px;
+  width: auto;
+  padding: 0 16px;
+  border-radius: 2px;
+  background-color: $light-blue;
+
+  &-emoji {
+    @include flex;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  &-text {
+    @include text-style(14, $primary);
+    display: inline-block;
+  }
+}
