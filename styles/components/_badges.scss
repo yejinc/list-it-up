@@ -1,0 +1,79 @@
+%badge {
+  a {
+    display: inline-block;
+    position: relative;
+
+    i {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+    }
+
+    p {
+      @include text-style(9, $light-blue);
+      font-family: $font-title;
+    }
+  }
+}
+
+.badge-group {
+  @include inline-flex;
+  height: 40px;
+  width: auto;
+  border-radius: 2px;
+  overflow: hidden;
+
+  .badge {
+    @extend %badge;
+    width: 30px;
+    height: 100%;
+    padding: 0 8px;
+
+    a {
+      top: 2px; // NOTE: visual alignment
+      width: 14px;
+      height: 14px;
+    }
+
+    &-edit {
+      border-right: 1px solid rgba($light-blue, 0.2);
+      color: $light-blue;
+      background-color: $medium-blue;
+    }
+
+    &-archive {
+      color: $light-blue;
+      background-color: $medium-blue;
+    }
+
+    &-delete {
+      color: $light-blue;
+      background-color: $red;
+    }
+  }
+
+  @include responsive(T) {
+    height: 24px;
+
+    .badge {
+      width: auto;
+      padding: 2px 8px;
+      border-radius: 2px;
+
+      a {
+        top: 0;
+        width: auto;
+        height: 100%;
+      }
+
+      &-edit {
+        border-right: 0;
+        margin-right: 8px;
+      }
+
+      &-archive {
+        margin-right: 8px;
+      }
+    }
+  }
+}
