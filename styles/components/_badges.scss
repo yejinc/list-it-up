@@ -30,6 +30,11 @@
     padding: 0 8px;
     transition: opacity 350ms ease-in-out;
 
+    &-more {
+      color: $light-blue;
+      background-color: $medium-blue;
+    }
+
     &-content {
       top: 2px; // NOTE: visual alignment
       width: 14px;
