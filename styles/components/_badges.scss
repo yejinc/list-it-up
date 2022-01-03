@@ -28,6 +28,7 @@
     width: 30px;
     height: 100%;
     padding: 0 8px;
+    transition: opacity 350ms ease-in-out;
 
     &-content {
       top: 2px; // NOTE: visual alignment
@@ -49,6 +50,10 @@
     &-delete {
       color: $light-blue;
       background-color: $red;
+    }
+
+    &:active {
+      opacity: 0.4;
     }
   }
 
@@ -73,6 +78,10 @@
 
       &-archive {
         margin-right: 8px;
+      }
+
+      &:hover {
+        opacity: 0.4;
       }
     }
   }
