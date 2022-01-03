@@ -1,15 +1,15 @@
-%badge {
-  a {
+%badge-base {
+  .badge-content {
     display: inline-block;
     position: relative;
 
-    i {
+    .badge-icon {
       display: inline-block;
       width: 14px;
       height: 14px;
     }
 
-    p {
+    .badge-text {
       @include text-style(9, $light-blue);
       font-family: $font-title;
     }
@@ -24,12 +24,12 @@
   overflow: hidden;
 
   .badge {
-    @extend %badge;
+    @extend %badge-base;
     width: 30px;
     height: 100%;
     padding: 0 8px;
 
-    a {
+    &-content {
       top: 2px; // NOTE: visual alignment
       width: 14px;
       height: 14px;
@@ -60,7 +60,7 @@
       padding: 2px 8px;
       border-radius: 2px;
 
-      a {
+      &-content {
         top: 0;
         width: auto;
         height: 100%;
