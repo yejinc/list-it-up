@@ -1,93 +1,92 @@
 %badge-base {
-  .badge-content {
-    display: inline-block;
-    position: relative;
+  @include text-style(9, $light-blue);
+  font-family: $font-title;
+  color: $light-blue;
+}
 
-    .badge-icon {
-      display: inline-block;
-      width: 14px;
-      height: 14px;
-    }
+%badge-sm-base {
+  @include flex;
+  width: 30px;
+  padding: 19px 8px;
+  transition: opacity 350ms ease-in-out;
 
-    .badge-text {
-      @include text-style(9, $light-blue);
-      font-family: $font-title;
-    }
+  i {
+    font-size: 14px;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+%badge-md-base {
+  padding: 4px 8px;
+  border-radius: 2px;
+  transition: opacity 350ms ease-in-out;
+
+  &:hover {
+    opacity: 0.4;
   }
 }
 
 .badge-group {
   @include flex;
-  height: 40px;
-  width: auto;
-  border-radius: 2px;
-  overflow: hidden;
+  height: auto;
 
   .badge {
     @extend %badge-base;
-    width: 30px;
-    height: 100%;
-    padding: 0 8px;
-    transition: opacity 350ms ease-in-out;
+  }
+
+  .badge-sm {
+    height: auto;
 
     &-more {
-      color: $light-blue;
+      @extend %badge-sm-base;
+      border-radius: 2px;
       background-color: $medium-blue;
     }
 
-    &-content {
-      // top: 2px; // NOTE: visual alignment as a independent component
-      width: 14px;
-      height: 14px;
+    &-hidden {
+      @include flex;
+      border-radius: 2px;
+      overflow: hidden;
+
+      &-edit,
+      &-archive,
+      &-delete {
+        @extend %badge-sm-base;
+      }
+
+      &-edit,
+      &-archive {
+        background-color: $medium-blue;
+      }
+
+      &-edit {
+        border-right: 1px solid rgba($light-blue, 0.2);
+      }
+
+      &-delete {
+        background-color: $red;
+      }
+    }
+  }
+
+  .badge-md {
+    &-edit,
+    &-archive,
+    &-delete {
+      @extend %badge-md-base;
     }
 
-    &-edit {
-      border-right: 1px solid rgba($light-blue, 0.2);
-      color: $light-blue;
-      background-color: $medium-blue;
-    }
-
+    &-edit,
     &-archive {
-      color: $light-blue;
+      margin-right: 8px;
       background-color: $medium-blue;
     }
 
     &-delete {
-      color: $light-blue;
       background-color: $red;
-    }
-
-    &:active {
-      opacity: 0.4;
-    }
-  }
-
-  @include responsive(T) {
-    height: 24px;
-
-    .badge {
-      width: auto;
-      padding: 2px 8px;
-      border-radius: 2px;
-
-      &-content {
-        top: 1px; // NOTE: visual alignment when used in .list-group
-        width: auto;
-        // height: 100%; // NOTE: visual alignment as a independent component
-      }
-
-      &-edit {
-        border-right: 0;
-        margin-right: 8px;
-      }
-
-      &-archive {
-        margin-right: 8px;
-      }
-
-      &:hover {
-        opacity: 0.4;
-      }
     }
   }
 }

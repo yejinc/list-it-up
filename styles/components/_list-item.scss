@@ -1,0 +1,45 @@
+.list-item {
+  @include flex(space);
+  width: 100%;
+  padding: 16px 0;
+
+  .list-content {
+    @include flex;
+    flex-grow: 1;
+
+    .list-emoji {
+      @include flex;
+      margin-right: 8px;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 18px;
+        height: 18px;
+        object-fit: cover;
+      }
+    }
+
+    .list-text {
+      flex-grow: 1;
+      margin-right: 4px;
+      width: 198px;
+    }
+  }
+
+  @include responsive(T) {
+    .list-content {
+      .list-text {
+        width: 227px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    .list-content {
+      .list-text {
+        width: 341px;
+      }
+    }
+  }
+}
