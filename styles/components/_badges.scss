@@ -17,7 +17,7 @@
 }
 
 .badge-group {
-  @include inline-flex;
+  @include flex;
   height: 40px;
   width: auto;
   border-radius: 2px;
@@ -36,7 +36,7 @@
     }
 
     &-content {
-      top: 2px; // NOTE: visual alignment
+      // top: 2px; // NOTE: visual alignment as a independent component
       width: 14px;
       height: 14px;
     }
@@ -71,9 +71,9 @@
       border-radius: 2px;
 
       &-content {
-        top: 0;
+        top: 1px; // NOTE: visual alignment when used in .list-group
         width: auto;
-        height: 100%;
+        // height: 100%; // NOTE: visual alignment as a independent component
       }
 
       &-edit {
