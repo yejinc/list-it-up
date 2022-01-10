@@ -1,6 +1,11 @@
 .list-group {
   @include column-flex(center, start);
   padding: 16px 8px;
-
   background-color: $light-yellow;
+
+  &.is-empty {
+    .list-empty {
+      display: flex;
+    }
+  }
 }
