@@ -1,0 +1,6 @@
+.list-group {
+  @include column-flex;
+  padding: 16px 8px;
+
+  background-color: $light-yellow;
+}
