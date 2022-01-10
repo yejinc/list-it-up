@@ -1,4 +1,8 @@
 .list-empty {
+  @include flex;
+  height: 80px;
+  width: 100%;
+
   .empty-text {
     @include text-style(16, $primary);
     opacity: 0.2;
