@@ -31,62 +31,78 @@
 
 .badge-group {
   @include flex;
-  height: auto;
+  height: 100%;
+}
 
-  .badge {
-    @extend %badge-base;
+.badge {
+  @extend %badge-base;
+}
+
+.badge-sm {
+  height: 100%;
+
+  &-more {
+    @extend %badge-sm-base;
+    border-radius: 2px;
+    background-color: $medium-blue;
   }
 
-  .badge-sm {
-    height: auto;
+  &-hidden {
+    @include flex;
+    border-radius: 2px;
+    overflow: hidden;
 
-    &-more {
-      @extend %badge-sm-base;
-      border-radius: 2px;
-      background-color: $medium-blue;
-    }
-
-    &-hidden {
-      @include flex;
-      border-radius: 2px;
-      overflow: hidden;
-
-      &-edit,
-      &-archive,
-      &-delete {
-        @extend %badge-sm-base;
-      }
-
-      &-edit,
-      &-archive {
-        background-color: $medium-blue;
-      }
-
-      &-edit {
-        border-right: 1px solid rgba($light-blue, 0.2);
-      }
-
-      &-delete {
-        background-color: $red;
-      }
-    }
-  }
-
-  .badge-md {
     &-edit,
     &-archive,
     &-delete {
-      @extend %badge-md-base;
+      @extend %badge-sm-base;
     }
 
     &-edit,
     &-archive {
-      margin-right: 8px;
       background-color: $medium-blue;
+    }
+
+    &-edit {
+      border-right: 1px solid rgba($light-blue, 0.2);
     }
 
     &-delete {
       background-color: $red;
     }
+  }
+}
+
+.badge-md {
+  &-edit,
+  &-archive,
+  &-delete,
+  &-emoji-on,
+  &-emoji-off {
+    @extend %badge-md-base;
+  }
+
+  &-edit,
+  &-archive {
+    margin-right: 8px;
+    background-color: $medium-blue;
+  }
+
+  &-delete {
+    background-color: $red;
+  }
+
+  &-emoji-on,
+  &-emoji-off {
+    margin-bottom: 8px;
+  }
+
+  &-emoji-on {
+    color: $primary;
+    background-color: $light-blue;
+  }
+
+  &-emoji-off {
+    background-color: $sub-bg;
   }
 }

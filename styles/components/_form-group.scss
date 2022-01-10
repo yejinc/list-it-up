@@ -1,0 +1,30 @@
+.form-group {
+  background-color: $bg; // NOTE: temporary to be deleted
+
+  .input {
+    @include flex(space);
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 8px;
+    background-color: $primary;
+
+    &-emoji-picker {
+      width: 49px;
+      height: 100%;
+    }
+
+    .ic-arrow-down {
+      @include pos-centre-y;
+      left: 27.5px;
+      cursor: pointer;
+      font-size: 14px;
+      color: $light-yellow;
+    }
+
+    &-text {
+      @include text-style(16, $light-blue);
+      width: 100%;
+    }
+  }
+}
