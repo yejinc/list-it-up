@@ -5,6 +5,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+::-moz-selection {
+  /* Code for Firefox */
+  color: $primary;
+  background-color: rgba($highlight, 0.4);
+}
+
+::selection {
+  color: $primary;
+  background-color: rgba($highlight, 0.4);
+}
 
 html {
   font-family: $font-main;
