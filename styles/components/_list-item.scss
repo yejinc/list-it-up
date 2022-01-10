@@ -2,6 +2,11 @@
   @include flex(space);
   width: 100%;
   padding: 16px 0;
+  border-bottom: 1px solid rgba($primary, 0.1);
+
+  &:last-child {
+    border-bottom: 0;
+  }
 
   .list-content {
     @include flex;
@@ -24,6 +29,7 @@
       flex-grow: 1;
       margin-right: 4px;
       width: 198px;
+      color: $primary;
     }
   }
 
