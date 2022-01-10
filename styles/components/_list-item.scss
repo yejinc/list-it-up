@@ -26,6 +26,7 @@
     }
 
     .list-text {
+      @include text-style(16, $primary);
       flex-grow: 1;
       margin-right: 4px;
       width: 198px;
