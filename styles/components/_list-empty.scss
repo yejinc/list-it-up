@@ -1,0 +1,6 @@
+.list-empty {
+  .empty-text {
+    @include text-style(16, $primary);
+    opacity: 0.2;
+  }
+}
