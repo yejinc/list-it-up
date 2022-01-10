@@ -25,6 +25,7 @@
     &-text {
       @include text-style(16, $light-blue);
       width: 100%;
+      padding: 0 8px 0 4px;
     }
   }
 }
