@@ -1,31 +1,59 @@
 .form-group {
   background-color: $bg; // NOTE: temporary to be deleted
 
-  .input {
-    @include flex(space);
-    position: relative;
-    height: 50px;
-    width: 100%;
-    margin-bottom: 8px;
-    background-color: $primary;
-
-    &-emoji-picker {
-      width: 49px;
-      height: 100%;
-    }
-
-    .ic-arrow-down {
-      @include pos-centre-y;
-      left: 27.5px;
-      cursor: pointer;
-      font-size: 14px;
-      color: $light-yellow;
-    }
-
-    &-text {
-      @include text-style(16, $light-blue);
+  .input-wrapper {
+    .input {
+      @include flex(space);
+      position: relative;
+      height: 50px;
       width: 100%;
-      padding: 0 8px 0 4px;
+      margin-bottom: 8px;
+      background-color: $primary;
+
+      &-emoji-picker {
+        width: 49px;
+        height: 100%;
+      }
+
+      .ic-arrow-down {
+        @include pos-centre-y;
+        left: 27.5px;
+        cursor: pointer;
+        font-size: 14px;
+        color: $light-yellow;
+      }
+
+      &-text {
+        @include text-style(16, $light-blue);
+        width: 100%;
+        height: 50px;
+        padding: 0 8px 0 4px;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    .input-wrapper {
+      @include flex;
+
+      .input {
+        margin-bottom: 0;
+        background-color: transparent;
+
+        &-emoji-picker {
+          margin-right: 8px;
+          width: 62px;
+          border-radius: 2px;
+          background-color: $primary;
+        }
+
+        &-text {
+          border-radius: 2px;
+          margin-right: 8px;
+          padding: 0 16px 0;
+          background-color: $primary;
+        }
+      }
     }
   }
 }
