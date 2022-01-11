@@ -27,6 +27,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ic-arrow-back:before {
+  content: '\e906';
+}
 .ic-arrow-down:before {
   content: '\e905';
 }
