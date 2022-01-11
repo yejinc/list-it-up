@@ -5,7 +5,7 @@
 
   &.is-empty {
     .list-empty {
-      display: flex;
+      @include flex;
     }
   }
 }
