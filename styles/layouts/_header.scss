@@ -30,7 +30,7 @@
   &-category-button-group {
     @include no-scrollbar;
     height: 36px;
-    padding: 0 ($grid-margin - $category-button-padding);
+    padding: 0 ($grid-margin);
     margin-left: -#{$grid-margin};
     margin-bottom: 36px;
     overflow-x: auto;
