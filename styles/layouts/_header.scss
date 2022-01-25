@@ -30,14 +30,32 @@
   &-category-button-group {
     @include no-scrollbar;
     height: 36px;
-    padding: 0 $grid-margin;
+    padding: 0 ($grid-margin - $category-button-padding);
     margin-left: -#{$grid-margin};
+    margin-bottom: 36px;
     overflow-x: auto;
     white-space: nowrap;
     background-color: transparent;
 
+    &-wrapper {
+      transition: transform 300ms ease-in-out;
+    }
+
+    &.is-empty {
+      .header-category-button-group {
+        &-wrapper {
+          @include flex;
+          transform: translateX(15px);
+
+          .btn-category-new {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
     .btn-category {
-      margin-right: $grid-margin;
+      margin-right: $category-button-padding;
 
       &-new {
         margin-right: $grid-margin;
@@ -66,7 +84,7 @@
       &-wrapper {
         @include flex;
         flex-wrap: wrap;
-        gap: $grid-margin;
+        gap: $category-button-padding;
       }
 
       .btn-category {
@@ -76,6 +94,16 @@
           margin-right: 0;
         }
       }
+    }
+  }
+
+  @include responsive(D) {
+    &-title {
+      margin-bottom: 72px;
+    }
+
+    &-category-button-group {
+      margin-bottom: 72px;
     }
   }
 }
