@@ -1,13 +1,13 @@
 %badge-base {
+  @include flex;
   @include text-style(9, $light-blue);
   font-family: $font-title;
   color: $light-blue;
 }
 
 %badge-sm-base {
-  @include flex;
   width: 30px;
-  padding: 19px 8px;
+  min-height: 52px;
   transition: opacity 350ms ease-in-out;
 
   i {
@@ -36,10 +36,22 @@
 
 .badge {
   @extend %badge-base;
+  height: 100%;
 }
 
 .badge-sm {
+  @include column-flex;
   height: 100%;
+
+  &.is-clicked {
+    .badge-sm-more {
+      display: none;
+    }
+
+    .badge-sm-hidden {
+      @include flex;
+    }
+  }
 
   &-more {
     @extend %badge-sm-base;
@@ -48,10 +60,12 @@
   }
 
   &-hidden {
-    @include flex;
+    display: none;
+    height: 100%;
     border-radius: 2px;
     overflow: hidden;
 
+    &-arrow-back,
     &-edit,
     &-archive,
     &-delete {
@@ -61,6 +75,14 @@
     &-edit,
     &-archive {
       background-color: $medium-blue;
+    }
+
+    &-arrow-back {
+      background-color: $light-blue;
+
+      .ic-arrow-back {
+        color: $primary;
+      }
     }
 
     &-edit {
