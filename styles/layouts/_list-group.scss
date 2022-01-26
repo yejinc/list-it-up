@@ -3,6 +3,7 @@
   height: 100%;
   padding: 16px 8px;
   background-color: $light-yellow;
+  overflow: hidden;
 
   &.is-empty {
     .list-empty {

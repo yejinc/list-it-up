@@ -7,7 +7,9 @@
 
 %badge-sm-base {
   width: 30px;
-  min-height: 52px;
+  height: 100%;
+
+  padding: 0 8px;
   transition: opacity 350ms ease-in-out;
 
   i {
@@ -41,7 +43,7 @@
 
 .badge-group {
   @include flex;
-  height: 100%;
+  height: 100%; // NOTE: will be replaced height of list-item
 }
 
 .badge-title {
@@ -56,25 +58,19 @@
 .badge-sm {
   @include column-flex;
   height: 100%;
-
-  &.is-clicked {
-    .badge-sm-more {
-      display: none;
-    }
-
-    .badge-sm-hidden {
-      @include flex;
-    }
-  }
+  margin: auto auto;
 
   &-more {
     @extend %badge-sm-base;
+    display: none;
+    opacity: 0;
     border-radius: 2px;
     background-color: $medium-blue;
   }
 
   &-hidden {
-    display: none;
+    @include flex;
+    opacity: 1;
     height: 100%;
     border-radius: 2px;
     overflow: hidden;
@@ -145,7 +141,9 @@
 
 .badge-title {
   &-edit,
-  &-delete {
+  &-delete,
+  &-list-counter,
+  &-archived-counter {
     @extend %badge-title-base;
     height: 24px;
   }
@@ -166,5 +164,15 @@
       font-size: 14px;
       color: $light-yellow;
     }
+  }
+
+  &-list-counter {
+    color: $medium-blue;
+    background-color: $light-blue;
+  }
+
+  &-archived-counter {
+    color: $light-yellow;
+    background-color: $sub-bg;
   }
 }
