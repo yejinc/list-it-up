@@ -101,43 +101,47 @@
                 </div>
               </header>
 
-              <form class="form-group" action="#" method="POST">
-                <button class="badge badge-md-emoji-on visually-hidden">
-                  👇 emoji picker is now on
-                </button>
-                <button class="badge badge-md-emoji-off">
-                  emoji picker is now off
-                </button>
+              <section class="input-form">
+                <h1 class="visually-hidden" aria-hidden>List item input</h1>
 
-                <div class="input-wrapper">
-                  <div class="input-emoji-on visually-hidden">
-                    <button
-                      class="input-emoji-picker"
-                      type="button"
-                      aria-label="emoji-picker"
-                    >
-                      🍍
-                    </button>
-                    <i class="ic-arrow-down"></i>
+                <form class="form-group" action="#" method="POST">
+                  <button class="badge badge-md-emoji-on visually-hidden">
+                    👇 emoji picker is now on
+                  </button>
+                  <button class="badge badge-md-emoji-off">
+                    emoji picker is now off
+                  </button>
 
-                    <input
-                      class="input-text"
-                      type="text"
-                      placeholder="Name or [Name](Link URL)"
-                    />
+                  <div class="input-wrapper">
+                    <div class="input-emoji-on visually-hidden">
+                      <button
+                        class="input-emoji-picker"
+                        type="button"
+                        aria-label="emoji-picker"
+                      >
+                        🍍
+                      </button>
+                      <i class="ic-arrow-down"></i>
+
+                      <input
+                        class="input-text"
+                        type="text"
+                        placeholder="Name or [Name](Link URL)"
+                      />
+                    </div>
+
+                    <div class="input-emoji-off">
+                      <input
+                        class="input-text"
+                        type="text"
+                        placeholder="Name or [Name](Link URL)"
+                      />
+                    </div>
+
+                    <button class="btn-input-add" type="submit">add</button>
                   </div>
-
-                  <div class="input-emoji-off">
-                    <input
-                      class="input-text"
-                      type="text"
-                      placeholder="Name or [Name](Link URL)"
-                    />
-                  </div>
-
-                  <button class="btn-input-add" type="submit">add</button>
-                </div>
-              </form>
+                </form>
+              </section>
             </div>
           </div>
           <div class="col-md-1 col-lg-2"></div>
