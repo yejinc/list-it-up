@@ -83,22 +83,64 @@
     <main class="contents">
       <div class="container">
         <div class="row">
-          <div class="col-sm-4">
-            <header class="contents-header">
-              <h1 class="contents-header-title">
-                <span class="emoji">📚</span> books
-              </h1>
+          <div class="col-md-1 col-lg-2"></div>
+          <div class="col-sm-4 col-md-10 col-lg-8">
+            <div class="contents-wrapper">
+              <header class="contents-header">
+                <h1 class="contents-header-title">
+                  <span class="emoji">📚</span> books
+                </h1>
 
-              <div class="badge-title">
-                <button class="badge badge-title-edit" type="button">
-                  <i class="ic-edit"></i>
+                <div class="badge-title">
+                  <button class="badge badge-title-edit" type="button">
+                    <i class="ic-edit"></i>
+                  </button>
+                  <button class="badge badge-title-delete" type="button">
+                    <i class="ic-rubbish"></i>
+                  </button>
+                </div>
+              </header>
+
+              <form class="form-group" action="#" method="POST">
+                <button class="badge badge-md-emoji-on visually-hidden">
+                  👇 emoji picker is now on
                 </button>
-                <button class="badge badge-title-delete" type="button">
-                  <i class="ic-rubbish"></i>
+                <button class="badge badge-md-emoji-off">
+                  emoji picker is now off
                 </button>
-              </div>
-            </header>
+
+                <div class="input-wrapper">
+                  <div class="input-emoji-on visually-hidden">
+                    <button
+                      class="input-emoji-picker"
+                      type="button"
+                      aria-label="emoji-picker"
+                    >
+                      🍍
+                    </button>
+                    <i class="ic-arrow-down"></i>
+
+                    <input
+                      class="input-text"
+                      type="text"
+                      placeholder="Name or [Name](Link URL)"
+                    />
+                  </div>
+
+                  <div class="input-emoji-off">
+                    <input
+                      class="input-text"
+                      type="text"
+                      placeholder="Name or [Name](Link URL)"
+                    />
+                  </div>
+
+                  <button class="btn-input-add" type="submit">add</button>
+                </div>
+              </form>
+            </div>
           </div>
+          <div class="col-md-1 col-lg-2"></div>
         </div>
       </div>
     </main>
