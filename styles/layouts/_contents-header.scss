@@ -1,0 +1,21 @@
+.contents-header {
+  @include flex(between);
+
+  &-title {
+    @include inline-flex;
+    @include text-style(16, $primary);
+    font-family: $font-title;
+    height: 24px;
+    width: auto;
+
+    .emoji {
+      display: block;
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+      padding-top: 2px; // NOTE: visual alignment
+      margin-right: 8px;
+      object-fit: cover;
+    }
+  }
+}

@@ -29,9 +29,23 @@
   }
 }
 
+%badge-title-base {
+  padding: 0 8px;
+  border-radius: 2px;
+  transition: opacity 350ms ease-in-out;
+
+  &:hover {
+    opacity: 0.4;
+  }
+}
+
 .badge-group {
   @include flex;
   height: 100%;
+}
+
+.badge-title {
+  @include flex;
 }
 
 .badge {
@@ -126,5 +140,31 @@
 
   &-emoji-off {
     background-color: $sub-bg;
+  }
+}
+
+.badge-title {
+  &-edit,
+  &-delete {
+    @extend %badge-title-base;
+    height: 24px;
+  }
+
+  &-edit {
+    background-color: $light-yellow;
+
+    .ic-edit {
+      font-size: 14px;
+      color: $primary;
+    }
+  }
+
+  &-delete {
+    background-color: $red;
+
+    .ic-rubbish {
+      font-size: 14px;
+      color: $light-yellow;
+    }
   }
 }
