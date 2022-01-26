@@ -1,0 +1,14 @@
+.archived-group {
+  @include column-flex(center, start);
+  height: 100%;
+  padding: 16px 8px;
+  background-color: $sub-bg;
+  border-radius: 2px;
+  overflow: hidden;
+
+  &.is-empty {
+    .archived-empty {
+      @include flex;
+    }
+  }
+}
