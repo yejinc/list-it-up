@@ -3,6 +3,10 @@
     @include column-flex(start, between);
     padding: 32px 8px;
     background-color: $bg;
+
+    .input-form {
+      margin-bottom: 32px;
+    }
   }
 
   @include responsive(T) {
