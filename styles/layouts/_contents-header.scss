@@ -1,5 +1,6 @@
 .contents-header {
   @include flex(between);
+  margin-bottom: 32px;
 
   &-title {
     @include inline-flex;
