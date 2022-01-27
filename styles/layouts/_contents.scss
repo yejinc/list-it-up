@@ -1,6 +1,9 @@
 .contents {
+  padding-bottom: 72px;
+
   &-wrapper {
     @include column-flex(start, between);
+
     padding: 32px 8px;
     border-radius: 2px;
     background-color: $bg;
