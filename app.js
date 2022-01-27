@@ -1,6 +1,6 @@
 // #### step 1: 내용 추가
 
-// - [ ] input에 내용을 입력하고 확인 버튼을 누르면 list에 내용이 보인다
+// - [x] input에 내용을 입력하고 확인 버튼을 누르면 list에 내용이 보인다
 // - [x] input에 내용을 입력하고 앤터키를 누르면 list에 내용이 보인다
 // - [ ] input에 내용을 입력하고 나서 li 태그의 수가 0개 아면 .list-group에 .is-empty를 추가한다
 // - [ ] input에 내용을 입력하고 나서 li 태그의 수가 1개 이상아면 .list-group에 .is-empty를 삭제한다
@@ -24,36 +24,19 @@
 const $ = (selector) => document.querySelector(selector);
 
 function App() {
-  // form element가 자동으로 submit되는 것을 막기
   $('#list-form').addEventListener('submit', (e) => {
     e.preventDefault();
   });
 
-  // input에 내용을 입력하고 나서 li 태그의 수가 0개 아면 .list-group에 .is-empty를 추가한다
-  // input에 내용을 입력하고 나서 li 태그의 수가 1개 이상아면 .list-group에 .is-empty를 삭제한다
-
-  //   if ($('.list-item').length >= 1) {
-  //     $('.list-group').classList.remove('is-empty');
-  //   }
-  //   if (($('.list-item').length = 0)) {
-  //     $('.list-group').classList.add('is-empty');
-  //   }
-
-  // list 내용을 입력 받기
-  $('#emoji-off-input-text').addEventListener('keydown', (e) => {
-    if (e.key !== 'Enter') {
-      return;
-    }
-
+  const addListcontent = () => {
     if ($('#emoji-off-input-text').value === '') {
       alert('please add text');
       return;
     }
 
-    if (e.key === 'Enter') {
-      const emojiOffInputText = $('#emoji-off-input-text').value;
-      const listItemTemplate = (listText) => {
-        return `<li class="list-item is-more">
+    const emojiOffInputText = $('#emoji-off-input-text').value;
+    const listItemTemplate = (listText) => {
+      return `<li class="list-item is-more">
                     <div class="list-content">
                       <p class="list-text">${listText}</p>
                     </div>
@@ -104,25 +87,26 @@ function App() {
                       </div>
                     </div>
                   </li>`;
-      };
+    };
 
-      $('.list-group').insertAdjacentHTML(
-        'afterbegin',
-        listItemTemplate(emojiOffInputText)
-      );
+    $('.list-group').insertAdjacentHTML(
+      'afterbegin',
+      listItemTemplate(emojiOffInputText)
+    );
 
-      const listCounter = $('.list-group').querySelectorAll('li').length;
-      $('.badge-title-list-counter').innerText = `total: ${listCounter}`;
-      $(
-        '.badge-title-list-counter'
-      ).ariaLabel = `you have ${listCounter} lists`;
+    const listCounter = $('.list-group').querySelectorAll('li').length;
+    $('.badge-title-list-counter').innerText = `total: ${listCounter}`;
+    $('.badge-title-list-counter').ariaLabel = `you have ${listCounter} lists`;
 
-      if (listCounter >= 99) {
-        $('.badge-title-list-counter').innerText = `total: 99+`;
-      }
-
-      $('#emoji-off-input-text').value = '';
+    if (listCounter >= 99) {
+      $('.badge-title-list-counter').innerText = `total: 99+`;
     }
+
+    $('#emoji-off-input-text').value = '';
+  };
+
+  $('.btn-input-add').addEventListener('click', () => {
+    addListcontent();
   });
 }
 
