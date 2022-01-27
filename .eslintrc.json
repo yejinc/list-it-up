@@ -1,7 +1,9 @@
 {
   "plugins": ["prettier"],
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended", "react-app"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "indent": ["error", 2]
   }
 }
