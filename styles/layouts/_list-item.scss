@@ -10,9 +10,9 @@
   }
 
   &.is-more {
-    width: auto;
-
     .list-content {
+      flex-grow: 1;
+
       .list-text {
         width: 100%;
       }
