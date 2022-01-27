@@ -8,7 +8,7 @@
 // - [x] 총 내용 갯수를 count하여 상단에 보여준다.
 // - [x] 총 내용 갯수가 99개가 넘어가면 counter에 값을 99+로 고정한다.
 // - [x] 내용이 추가되고 나면 input은 빈 값으로 초기화한다.
-// - [ ] 사용자 입력값이 빈 값이라면 추가 되지 않는다.
+// - [x] 사용자 입력값이 빈 값이라면 추가 되지 않는다.
 
 // #### step 2: 내용 수정
 
@@ -41,6 +41,15 @@ function App() {
 
   // list 내용을 입력 받기
   $('#emoji-off-input-text').addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') {
+      return;
+    }
+
+    if ($('#emoji-off-input-text').value === '') {
+      alert('please add text');
+      return;
+    }
+
     if (e.key === 'Enter') {
       const emojiOffInputText = $('#emoji-off-input-text').value;
       const listItemTemplate = (listText) => {
