@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
+    <script defer src="./app.js"></script>
     <title>list it up</title>
   </head>
   <body>
@@ -104,14 +105,19 @@
               <section class="input-form">
                 <h1 class="visually-hidden" aria-hidden>List item input</h1>
 
-                <form class="form-group" action="#" method="POST">
-                  <button class="badge badge-md-emoji-on visually-hidden">
-                    👇 emoji picker is now on
-                  </button>
-                  <button class="badge badge-md-emoji-off">
-                    emoji picker is now off
-                  </button>
+                <button class="badge badge-md-emoji-on visually-hidden">
+                  👇 emoji picker is now on
+                </button>
+                <button class="badge badge-md-emoji-off">
+                  emoji picker is now off
+                </button>
 
+                <form
+                  id="list-form"
+                  class="form-group"
+                  action="#"
+                  method="POST"
+                >
                   <div class="input-wrapper">
                     <div class="input-emoji-on visually-hidden">
                       <button
@@ -123,15 +129,19 @@
                       </button>
                       <i class="ic-arrow-down"></i>
 
+                      <!-- <label for=""></label> -->
                       <input
+                        id="emoji-on-input-text"
                         class="input-text"
                         type="text"
                         placeholder="Name or [Name](Link URL)"
+                        autocomplete="off"
                       />
                     </div>
 
                     <div class="input-emoji-off">
                       <input
+                        id="emoji-off-input-text"
                         class="input-text"
                         type="text"
                         placeholder="Name or [Name](Link URL)"
@@ -161,26 +171,20 @@
                   </div>
                 </div>
 
-                <div class="list-group">
+                <ul class="list-group is-empty">
                   <!-- NOTE: when the list is empty -->
-                  <div class="list-empty">
+                  <li class="list-empty">
                     <p class="empty-text">
                       my list is now empty,<br />
                       yet full of posibilities:)
                     </p>
-                  </div>
+                  </li>
 
                   <!-- NOTE: when the list item added -->
-                  <div class="list-item is-more">
+                  <!-- <li class="list-item is-more">
                     <div class="list-content">
                       <p class="list-emoji">🍑</p>
-                      <p class="list-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ex maxime harum aspernatur tempore, itaque temporibus
-                        mollitia exercitationem ipsam, cum voluptas, impedit a
-                        ab dolore. Earum animi voluptatum incidunt repellat
-                        reiciendis?
-                      </p>
+                      <p class="list-text">Lorem</p>
                     </div>
 
                     <div class="badge-group">
@@ -228,8 +232,8 @@
                         </button>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </li> -->
+                </ul>
               </section>
 
               <section class="archived is-closed">
