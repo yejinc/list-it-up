@@ -24,21 +24,23 @@
 
   &-title {
     @include flex(between);
+    padding: 4px 8px;
     margin-bottom: 16px;
     transition: all 250ms ease-in-out;
 
     &-left {
       @include flex;
-      gap: 8px;
 
       .emoji {
         display: inline-block;
         font-size: 16px;
+        margin-right: 8px;
       }
 
       .title {
         @include text-style(14, $primary);
         font-family: $font-title;
+        margin-right: 8px;
       }
 
       .ic-arrow-down {

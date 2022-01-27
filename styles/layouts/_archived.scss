@@ -33,15 +33,17 @@
 
     &-left {
       @include flex;
-      gap: 8px;
+      padding: 4px 8px;
 
       .emoji {
         display: inline-block;
+        margin-right: 8px;
         font-size: 16px;
       }
 
       .title {
         @include text-style(14, $primary);
+        margin-right: 8px;
         font-family: $font-title;
       }
 
