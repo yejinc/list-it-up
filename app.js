@@ -22,6 +22,27 @@
 // - [x] 확인 버튼을 클릭하면 내용이 삭제 된다.
 // - [x] 총 내용 갯수를 count하여 상단에 보여준다.
 
+// #### TODO 내용 이동
+// - [ ] save 버튼을 누르면 클릭 이벤트를 받고, 메뉴 저장 컨펌 prompt가 뜬다.
+// - [ ] 확인 버튼을 클릭하면 내용이 archived로 이동 된다.
+// - [ ] 총 내용 갯수를 count하여 badge-title-archived-counter에 보여준다.
+
+// #### TODO 이모지 피커
+// - [ ] [follow the instruction accordingly](https://emoji-button.js.org/docs/)
+
+// #### TODO list/archive dropdown
+// - [ ] list가 펼쳐져 있을 때 list-title을 누르면 .is-closed 클래스명을 삭제한다
+// - [ ] list가 닫혀져 있을 때 list-title을 누르면 .is-closed 클래스명을 추가한다
+// - [ ] archived가 펼쳐져 있을 때 list-title을 누르면 .is-closed 클래스명을 삭제한다
+// - [ ] archived가 닫혀져 있을 때 list-title을 누르면 .is-closed 클래스명을 추가한다
+
+// #### TODO markdown link
+// - [ ] [follow the tutorial](https://www.bigomega.dev/markdown-parser)
+
+// #### TODO list-item options(sm-only)
+// - [ ] list-item에 more 버튼을 클릭하면 is-more 클래스명이 삭제된다.
+// - [ ] list-item에 back 버튼을 클릭하면 is-more 클래스명이 추가된다.
+
 const $ = (selector) => document.querySelector(selector);
 
 function App() {
