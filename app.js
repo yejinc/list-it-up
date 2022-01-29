@@ -50,9 +50,13 @@ function App() {
     const listCounter = $('.list-group').querySelectorAll('li').length;
     $('.badge-title-list-counter').innerText = `total: ${listCounter}`;
     $('.badge-title-list-counter').ariaLabel = `you have ${listCounter} lists`;
+
+    if (listCounter >= 99) {
+      $('.badge-title-list-counter').innerText = `total: 99+`;
+    }
   };
 
-  const addListcontent = () => {
+  const addListContent = () => {
     if ($('#emoji-off-input-text').value === '') {
       alert('please add text');
       return;
@@ -110,11 +114,27 @@ function App() {
 
     updateListCounter();
 
-    if (listCounter >= 99) {
-      $('.badge-title-list-counter').innerText = `total: 99+`;
-    }
-
     $('#emoji-off-input-text').value = '';
+  };
+
+  const editListContent = (e) => {
+    const listText = e.target.closest('li').querySelector('.list-text');
+    const editedListText = prompt(
+      'how would you liked to edit?',
+      listText.innerText
+    );
+    listText.innerText = editedListText;
+
+    if (editedListText === null) {
+      return;
+    }
+  };
+
+  const deleteListContent = (e) => {
+    if (confirm('are you sure deleting this one?')) {
+      e.target.closest('li').remove();
+      updateListCounter();
+    }
   };
 
   $('.list-group').addEventListener('click', (e) => {
@@ -122,26 +142,14 @@ function App() {
       e.target.classList.contains('badge-md-edit') ||
       e.target.classList.contains('badge-sm-edit')
     ) {
-      const listText = e.target.closest('li').querySelector('.list-text');
-      const editedListText = prompt(
-        'how would you liked to edit?',
-        listText.innerText
-      );
-      listText.innerText = editedListText;
-
-      if (editedListText === null) {
-        return;
-      }
+      editListContent(e);
     }
 
     if (
       e.target.classList.contains('badge-md-delete') ||
       e.target.classList.contains('badge-sm-delete')
     ) {
-      if (confirm('are you sure deleting this one?')) {
-        e.target.closest('li').remove();
-        updateListCounter();
-      }
+      deleteListContent(e);
     }
   });
 
@@ -149,9 +157,7 @@ function App() {
     e.preventDefault();
   });
 
-  $('.btn-input-add').addEventListener('click', () => {
-    addListcontent();
-  });
+  $('.btn-input-add').addEventListener('click', addListContent);
 }
 
 App();
