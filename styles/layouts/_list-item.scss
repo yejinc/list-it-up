@@ -9,32 +9,9 @@
     border-bottom: 0;
   }
 
-  &.is-more {
-    .list-content {
-      flex-grow: 1;
-
-      .list-text {
-        width: 100%;
-      }
-    }
-
-    .badge-group {
-      .badge-sm {
-        &-more {
-          @include flex;
-          opacity: 1;
-        }
-
-        &-hidden {
-          display: none;
-          opacity: 0;
-        }
-      }
-    }
-  }
-
   .list-content {
     @include flex;
+    flex-grow: 1;
 
     .list-emoji {
       display: inline-block;
@@ -46,7 +23,8 @@
     .list-text {
       @include text-style(16, $primary);
       margin-right: 4px;
-      width: 230px;
+      width: 100%;
+      // width: 230px;
       color: $primary;
     }
   }

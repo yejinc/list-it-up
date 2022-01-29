@@ -2,6 +2,7 @@
   @include flex;
   @include text-style(9, $light-blue);
   font-family: $font-title;
+  height: 24px;
   color: $light-blue;
 }
 
@@ -14,6 +15,7 @@
 
   i {
     font-size: 14px;
+    cursor: pointer;
   }
 
   &:active {
@@ -52,56 +54,39 @@
 
 .badge {
   @extend %badge-base;
-  height: 100%;
 }
 
 .badge-sm {
-  @include column-flex;
-  height: 100%;
-  margin: auto auto;
+  @include flex;
+  border-radius: 2px;
+  overflow: hidden;
 
-  &-more {
+  &-arrow-back,
+  &-edit,
+  &-archive,
+  &-delete {
     @extend %badge-sm-base;
-    display: none;
-    opacity: 0;
-    border-radius: 2px;
+  }
+
+  &-edit,
+  &-archive {
     background-color: $medium-blue;
   }
 
-  &-hidden {
-    @include flex;
-    opacity: 1;
-    height: 100%;
-    border-radius: 2px;
-    overflow: hidden;
+  &-arrow-back {
+    background-color: $light-blue;
 
-    &-arrow-back,
-    &-edit,
-    &-archive,
-    &-delete {
-      @extend %badge-sm-base;
+    .ic-arrow-back {
+      color: $primary;
     }
+  }
 
-    &-edit,
-    &-archive {
-      background-color: $medium-blue;
-    }
+  &-edit {
+    border-right: 1px solid rgba($light-blue, 0.2);
+  }
 
-    &-arrow-back {
-      background-color: $light-blue;
-
-      .ic-arrow-back {
-        color: $primary;
-      }
-    }
-
-    &-edit {
-      border-right: 1px solid rgba($light-blue, 0.2);
-    }
-
-    &-delete {
-      background-color: $red;
-    }
+  &-delete {
+    background-color: $red;
   }
 }
 
@@ -145,7 +130,6 @@
   &-list-counter,
   &-archived-counter {
     @extend %badge-title-base;
-    height: 24px;
   }
 
   &-edit {
